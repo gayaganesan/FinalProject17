@@ -99,7 +99,71 @@ while user_choice != 3:
     user_choice = int(input("Type the number of your choice. "))
 
 if user_choice == 3:
-    print("""You find that the Watcher has faced this coven years ago. She writes that to stop the spell, you need to collect""")
+    print("""You find that the Watcher has faced this coven years ago. She writes that to stop the spell, you need to collect:
+        Salamander eyes
+        Orb of Ramjarin
+        Doll's Eye Crystal
+        Ghora demon eggs""")
+
+inventory = []
+
+places = """1. Magic Shop
+2. Restfield Cemetery
+3. Catacombs
+4. Buffy's house"""
+
+print(f"Where would you like to go? {places}")
+user_choice = int(input("Type the number of your choice. "))
+
+magic_shop_choices = """Do you want to:
+    1. Look for salamander eyes
+    2. Ask about the Orb of Ramjarin
+    3. Talk to the owner of the shop
+    4. Ask about Ghora demons
+    5. Leave"""
+if user_choice == 1:
+    print(f"""At the Magic Shop, you see shelves full of ingredients. {magic_shop_choices}""")
+    answer = int(input("Type the number of your choice. "))
+    if answer == 1:
+        print("""You find salamander eyes on a shelf in the back! However, when you go to pay for them, you realize you left your
+        money at home :(. You ask the owner if there is any way you can get the eyes now, and she says she'll give them
+        to you for free if you answer the following riddle:
+
+        What happens one in a month, twice in a moment, and never in a thousand years?""")
+        riddle_response = input("Type your response: ")
+        if riddle_response == 'm' or 'M' or 'the letter m':
+            if "salamander eyes" not in inventory:
+                inventory += "salamander eyes"
+            print("You got the salamander eyes! They have been added to your inventory.")
+        else:
+            print("Sorry, that's incorrect. Come back later and try again.")
+        print(magic_shop_choices)
+        answer = int(input("Type the number of your choice. "))
+
+    if answer == 2:
+        print("""You ask if she knows where to get an Orb of Ramjarin, and she replies, 'Well, I heard a gang of vampires in
+        the cemetery were talking about getting one.'""")
+        print(magic_shop_choices)
+        answer = int(input("Type the number of your choice. "))
+
+    if answer == 3:
+        print("You ask how the owner's day has been. She is delighted to chat and offers you a free sample of holy water.")
+        if "holy water" not in inventory:
+            inventory += "holy water"
+        print(magic_shop_choices)
+        answer = int(input("Type the number of your choice. "))
+
+    if answer == 4:
+        print("""You ask about Ghora demons, and the shop owner says, 'I haven't seen one up close and personal, but I heard
+        their eyes are their weak spot.'""")
+        print(magic_shop_choices)
+        answer = int(input("Type the number of your choice. "))
+
+    if answer == 5:
+        print(f"Where would you like to go? {places}")
+        user_choice = int(input("Type the number of your choice. "))
+
+
 
 
 
